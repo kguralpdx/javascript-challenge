@@ -37,7 +37,10 @@ const runEnter = () => {
     console.log(inputValue);
     console.log(tableData);
 
+    // Use the form input to filter the data by date
+    let filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
 
+    console.log(filteredData);
 
 
 }
