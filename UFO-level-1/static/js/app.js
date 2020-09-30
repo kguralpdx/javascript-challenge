@@ -14,6 +14,12 @@ tableData.forEach(function(ufo) {
 
     Object.entries(ufo).forEach(function([key, value]) {
         console.log(key,value);
-    })
+
+        // Append 1 cell for each ufo value (date, city, state, country, shape, duration, and comment )
+        var cell = tbody.append("td");
+
+        // Add the ufo data to the table
+        cell.text(value);
+    });
     
 });
