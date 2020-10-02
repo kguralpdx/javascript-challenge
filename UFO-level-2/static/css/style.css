@@ -92,10 +92,7 @@ select {
   min-width: 70px;
 }
 
-#table-area td:nth-child(3)
-#table-area td:nth-child(4) {
-  text-transform: uppercase;
-}
+
 
 .loader {
   margin-top: 50px;
@@ -215,6 +212,11 @@ select {
   tr:nth-of-type(even) {
     background: #ffd98b;
 }
+
+  #table-area tbody td:nth-child(3)
+  #table-area tbody td:nth-child(4) {
+    text-transform: uppercase;
+  }
 
   .hero h1 {
     animation: smaller-title 1.2s forwards linear;
