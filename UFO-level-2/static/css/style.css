@@ -98,7 +98,8 @@ select {
   padding: 20px;
   margin: 0;
   background: black;
-  background-image: url("../images/nasa.jpg");
+  background-image: url("../images/PIA23121.jpg");
+ /* background-image: url("../images/nasa.jpg"); */
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
@@ -120,7 +121,7 @@ select {
 /* input placeholder color changes */
 .form-control::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #8e979f;
+  color: #8e979f; 
 }
 
 .form-control::-moz-placeholder {
@@ -136,6 +137,18 @@ select {
 .form-control:-moz-placeholder {
   /* Firefox 18- */
   color: #8e979f;
+}
+
+#filter-btn {
+  border-radius: 8px;
+  border: 2px solid #2b3e50;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* media queries which will only be activated at specific screen sizes */
@@ -185,6 +198,10 @@ select {
     text-align: center;
     content: attr(data-th);
   }
+
+  tr:nth-of-type(even) {
+    background: #ffd98b;
+}
 
   .hero h1 {
     animation: smaller-title 1.2s forwards linear;
