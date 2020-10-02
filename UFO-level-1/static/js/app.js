@@ -15,7 +15,6 @@ tableData.forEach((ufo) => {
 
         // Add the ufo data to the table
         cell.text(value);
-        console.log(cell.text(value));
 
     }); 
 });
@@ -45,8 +44,8 @@ const runEnter = () => {
     console.log(filteredData);
 
     var table, tr, td, i, txtValue;
-    table = document.getElementById("ufo-table")[0];
-    console.log(table);
+    table = document.getElementById("ufo-table");
+    //console.log(table);
 
     tr = table.getElementsByTagName("tr");
 
