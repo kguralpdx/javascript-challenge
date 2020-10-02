@@ -65,6 +65,15 @@ body {
   margin-top: 10px;
 }
 
+/* This CSS styles the ufo icon in the filters form */
+.fil-ufo {
+  position: relative;
+  /* bottom: 5px; 
+  left: 150px;*/
+  width: 30px;
+  color: white;
+}
+
 select {
   display: block;
   width: 100%;

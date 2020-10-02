@@ -65,6 +65,15 @@ body {
   margin-top: 10px;
 }
 
+/* This CSS styles the ufo icon in the filters form */
+.fil-ufo {
+  position: relative;
+  /* bottom: 5px; 
+  left: 150px;*/
+  width: 30px;
+  color: white;
+}
+
 select {
   display: block;
   width: 100%;
@@ -83,6 +92,11 @@ select {
   min-width: 70px;
 }
 
+#table-area td:nth-child(3)
+#table-area td:nth-child(4) {
+  text-transform: uppercase;
+}
+
 .loader {
   margin-top: 50px;
 }
@@ -98,9 +112,8 @@ select {
   padding: 20px;
   margin: 0;
   background: black;
-  background-image: url("../images/PIA23121.jpg");
- /* background-image: url("../images/nasa.jpg"); */
   background-attachment: fixed;
+  background-image: url("../images/nebulla.jpg"); 
   background-position: bottom center;
   background-size: cover;
 }
