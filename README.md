@@ -3,28 +3,32 @@
 
 ## Overview
 
-The purpose of thie challenge is to take some UFO sighting data and load that into a dynamically created HTML table. This table should be filterable through input in a form, returning just the results that match the input value(s). All of this needs to be done using only HTML, CSS, Javascript and D3.js. This challenge is separated into two levels--level 1 for filtering by date only and level 2 for filterng by date, city, state, country, shape or a combination of any of those five.
+The purpose of thie challenge is to take some UFO sighting data and load that into a dynamically created HTML table. This table should be filterable through input in a form, returning just the results that match the input value(s). All of this needs to be done using only *HTML*, *CSS*, *JavaScript* and *D3.js*. This challenge is separated into two levels--level 1 for filtering by date only and level 2 for filterng by date, city, state, country, shape or a combination of any of those five.
 
 
 ### Files and Folders
 
-* [Landing Page](Missions_to_Mars/templates/index.html) - this *index.html* file is the landing page for the website and where the results of the scraping will be displayed
-* **Jupyter Notebook** (Missions_to_Mars/mission_to_mars.jpynb) - the Jupyter Notebook file that was used to create the PyMongo script for the scraping; this is not used in the actual scraping process
-* [Missions_to_Mars](Missions_to_Mars/) - main folder that holds all the files used and created for this project
-    * [static](Missions_to_Mars/static/) - this folder holds two subfolders--css and images
-        * [css](Missions_to_Mars/static/css/) - this folder holds the *style.css* file that helps format the webpage
-        * [images](Missions_to_Mars/static/images/) - this folder holds the image file used as the background of the jumbotron on the webpage (*pia22594.jpg*) as well as the screenshots of the webpage
-           #### Screenshot Files
-            1. [Entire Webpage](Missions_to_Mars/static/images/entire_webpage.PNG) - screenshot of the entire populated webpage
-            2. [Featured Mars Image and the Mars Facts table](Missions_to_Mars/static/images/featured_mars_image_and_mars_facts_table.PNG) - screenshot of the Featured Mars Image and the Mars Facts table
-            3. [Four Hemispheres](Missions_to_Mars/static/images/four_hemispheres.PNG) - screenshot of the 4 hemispheres of Mars
-            4. [Scrape Button](Missions_to_Mars/static/images/jumbotron_with_scrape_button.PNG) - screenshot of the jumbotron section of the webpage featuring the *Scrape New Data* button that kicks of the scraping
-            5. [Latest News](Missions_to_Mars/static/images/latest_news.PNG) - screenshot of the *Latest News* section of the webpage
-    * [templates](Missions_to_Mars/templates/) - this folder contains the *index.html* file, or the *Landing Page* file
-    * [app.py](Missions_to_Mars/app.py) - this is the *Flask* API
-    * [scrape_mars.py](Missions_to_Mars/scrape_mars.py) - this is the *PyMongo* script that does the scraping
+#### Level 1
 
-    * [mars_facts_table](Missions_to_Mars/mars_facts_table.html) - this file is the Mars Facts table created in *Jupyter Notebook* and saved as an HTML file. This is not needed to run this project. It's more of a troubleshooting file when I had issues trying to get the Mars Facts table to display on the website. This information is also saved to a variable and that's how it's used when running this project.
+* [UFO-level-1](UFO-level-1/) - main folder that holds all the files used and created for the level 1 part of this challenge
+    * [Landing Page](UFO-level-1/index.html) - this *index.html* file is the landing page for the website; all the data is displayed when first opening this page
+    * [static](UFO-level-1/static/) - this folder holds three subfolders--css, images and js
+        * [css](UFO-level-1/static/css/) - this folder holds the *style.css* file that helps format the webpage
+        * [images](UFO-level-1/static/images/) - this folder holds the image files used as the background of the parralax on the webpage (*PIA23121.jpg*) and the spaceship icon (*ufo.svg*)
+        * [js](UFO-level-1/static/js/) - this folder holds the two *JavaScript* files
+            * [app.js](UFO-level-1/static/js/app.js) - this file contains the *JavaScript* script that manipulates the *HTML* page and does the filtering
+            * [data.js](UFO-level-1/static/js/app.js) - this file contains the UFO sightings data
+
+#### Level 2
+
+* [UFO-level-2](UFO-level-2/) - main folder that holds all the files used and created for the level 2 part of this challenge
+    * [Landing Page](UFO-level-2/index.html) - this *index.html* file is the landing page for the website; all the data is displayed when first opening this page
+    * [static](UFO-level-2/static/) - this folder holds three subfolders--css, images and js
+        * [css](UFO-level-2/static/css/) - this folder holds the *style.css* file that helps format the webpage
+        * [images](UFO-level-2/static/images/) - this folder holds the image files used as the background of the parralax on the webpage (*nebulla.jpg*) and the spaceship icon (*ufo.svg*)
+        * [js](UFO-level-2/static/js/) - this folder holds the two *JavaScript* files
+            * [app.js](UFO-level-2/static/js/app.js) - this file contains the *JavaScript* script that manipulates the *HTML* page and does the filtering
+            * [data.js](UFO-level-2/static/js/app.js) - this file contains the UFO sightings data
 
 
 ## Requirements
