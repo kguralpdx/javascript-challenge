@@ -43,24 +43,42 @@ const runEnter = () => {
 
     console.log(filteredData);
 
-    var table, tr, td, i, txtValue;
-    table = document.getElementById("ufo-table");
-    //console.log(table);
+    // Clear out the table rows
+    tbody.html("");
 
-    tr = table.getElementsByTagName("tr");
+    // Loop through the data to get an object for each filtered ufo data record
+    filteredData.forEach((filterDate) => {
+        var row = tbody.append("tr");
 
-    // Loop through all table rows, and hide those that don't match the search query
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.indexOf(inputValue) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
+        Object.entries(filterDate).forEach(([key, value]) => {
+
+            // Append 1 cell for each ufo value (date, city, state, country, shape, duration, and comment )
+            var cell = row.append("td");
+
+            // Add the newly filtered data to the table
+            cell.text(value);
+
+        }); 
+    });
+
+    // var table, tr, td, i, txtValue;
+    // table = document.getElementById("ufo-table");
+    // //console.log(table);
+
+    // tr = table.getElementsByTagName("tr");
+
+    // // Loop through all table rows, and hide those that don't match the search query
+    // for (i = 0; i < tr.length; i++) {
+    //     td = tr[i].getElementsByTagName("td")[0];
+    //     if (td) {
+    //         txtValue = td.textContent || td.innerText;
+    //         if (txtValue.indexOf(inputValue) > -1) {
+    //             tr[i].style.display = "";
+    //         } else {
+    //             tr[i].style.display = "none";
+    //         }
+    //     }
+    // }
 
 
 
