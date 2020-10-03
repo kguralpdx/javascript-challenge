@@ -33,21 +33,19 @@ const runEnter = () => {
     let inputElementDT = d3.select("#datetime-input");
     let inputElementCT = d3.select("#city-input");
     let inputElementST = d3.select("#state-input");
+    let inputElementCO = d3.select("#country-input");
+    let inputElementSH = d3.select("#shape-input");
 
     // Get the value property of the input elements
     let inputValueDT = inputElementDT.property("value");
     let inputValueCT = inputElementCT.property("value");
     let inputValueST = inputElementST.property("value");
-
-    console.log(inputValueDT);
-    console.log(inputValueCT);
-    console.log(inputValueST);
-    console.log(tableData);
+    let inputValueCO = inputElementCO.property("value");
+    let inputValueSH = inputElementSH.property("value");
 
     // Use the form input to filter the data by date
    // let filteredData = tableData.filter(sighting => sighting.datetime === inputValueDT);
 
-   // console.log(filteredData);
 
     //var table, tr, td, i, txtValue//, tddate, tdcity, tdstate;
     var table = document.getElementById("ufo-table");
@@ -55,89 +53,27 @@ const runEnter = () => {
  
      // Loop through all table rows, and hide those that don't match the search query
     for (i = 1; i < tr.length; i++) {
-        var tddate = tr[i].getElementsByTagName("td")[0];
-        var tdcity = tr[i].getElementsByTagName("td")[1]; 
-        var tdstate = tr[i].getElementsByTagName("td")[2];
+        var tddate = tr[i].getElementsByTagName("td")[0];       // date
+        var tdcity = tr[i].getElementsByTagName("td")[1];       // city
+        var tdstate = tr[i].getElementsByTagName("td")[2];      // state
+        var tdcountry = tr[i].getElementsByTagName("td")[3];    // country
+        var tdshape = tr[i].getElementsByTagName("td")[4];      // shape
         var dateValue = tddate.textContent || tddate.innerText;
         var cityValue = tdcity.textContent || tdcity.innerText;
         var stateValue = tdstate.textContent || tdstate.innerText;
+        var countryValue = tdcountry.textContent || tdcountry.innerText;
+        var shapeValue = tdshape.textContent || tdshape.innerText;
 
-        if (dateValue.indexOf(inputValueDT) > -1  && cityValue.indexOf(inputValueCT) > -1 && stateValue.indexOf(inputValueST) > -1) {
+        // combine all the filters
+        if (dateValue.indexOf(inputValueDT) > -1  && cityValue.indexOf(inputValueCT) > -1 && stateValue.indexOf(inputValueST) > -1 && countryValue.indexOf(inputValueCO) > -1 && shapeValue.indexOf(inputValueSH) > -1) {
             tr[i].style.display = "";
         } else {
             tr[i].style.display = "none";
-        }      
-        // var tddate = tr[i].getElementsByTagName("td")[0];   //date column
-        // tdcity = tr[i].getElementsByTagName("td")[1];   //city column
-        // tdstate = tr[i].getElementsByTagName("td")[2];  //state column
-        // if (tddate) {
-        //     txtValue = tddate.textContent || tddate.innerText;
-        //     console.log(txtValue);
-        //     console.log(txtValue.indexOf(inputValueDT));
-        // }
-        // if (tdcity) {
-        //     cityValue = tdcity.textContent || tdcity.innerText;
-        // }
-        // if (tdstate) {
-        //     stateValue = tdstate.textContent || tdstate.innerText;
-        // }
-
-        // console.log(txtValue);
-        // console.log(txtValue.indexOf(inputValueDT));
-        // if (txtValue.indexOf(inputValueDT) > -1) {
-        //     tr[i].style.display = "";
-        // } else {
-        //     tr[i].style.display = "none";
-        // }
-        
-    }
-
-
-
-
-    // // Loop through all table rows, and hide those that don't match the search query
-    // for (i = 0; i < tr.length; i++) {
-    //     td = tr[i].getElementsByTagName("td")[0];
-    //     if (td) {
-    //         txtValue = td.textContent || td.innerText;
-    //         if (txtValue.indexOf(inputValue) > -1) {
-    //             tr[i].style.display = "";
-    //         } else {
-    //             tr[i].style.display = "none";
-    //         }
-    //     }
-    // }
-
-
-
-
-
-}
-
-
-
-// // The click handler for the form
-// filterufo.on("click", function() {
-
-//     // Prevent the page from refreshing
-//     d3.event.preventDefault();
-
-//     // Select the input element and get the raw HTML node
-//     var inputElement = d3.select("datetime-input"); 
-
-//     // Get the value property of the input element
-//     var inputValue = inputElement.property("value");
-
-//     console.log(inputValue);
-//     console.log(tableData);
-
-
-
-
-// });
-
+        };    
+    };
+};
 
 
 // Create event handlers 
 button.on("click", runEnter);
-form.on("submit",runEnter);
+form.on("submit", runEnter);
