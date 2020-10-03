@@ -93,15 +93,7 @@ const runEnter = () => {
     }
 
 
-    // for (var i = 0; i < tr.length; i++) {
-    //     var firstCol = tds[0].textContent.toUpperCase();
-    //     var secondCol = tds[1].textContent.toUpperCase();
-    //     if (firstCol.indexOf(filter) > -1 || secondCol.indexOf(filter) > -1) {
-    //         tr[i].style.display = "";
-    //     } else {
-    //         tr[i].style.display = "none";
-    //     }      
-    // }
+
 
     // // Loop through all table rows, and hide those that don't match the search query
     // for (i = 0; i < tr.length; i++) {
