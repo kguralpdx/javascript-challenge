@@ -68,8 +68,6 @@ body {
 /* This CSS styles the ufo icon in the filters form */
 .fil-ufo {
   position: relative;
-  /* bottom: 5px; 
-  left: 150px;*/
   width: 30px;
   color: white;
 }
@@ -147,6 +145,7 @@ select {
   color: #8e979f;
 }
 
+/* make the form button look more like a button */
 #filter-btn {
   border-radius: 8px;
   border: 2px solid #2b3e50;
