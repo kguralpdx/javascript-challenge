@@ -49,7 +49,7 @@ At this point I moved on to the *Level 2* challenge. However, later I re-read th
 
 ### Level 2 - Date, City, State, Country, and Shape Filtering
 
-Started this version off using a copy of the *Level 1* files. Since this version needed input boxes for *City*, *State*, *Country* and *Shape* in addition to the *Date* input box in the filter form, I got those added to the HTML page. Then it was on to figured out how to have multiple filters applied to the dataset. Since the hide/show approach for the orignal version of *Level 1* had worked, I continued in that direction. This turned out to be a lot more challenging than I had expected and much more time-consuming. 
+Started this version off using a copy of the *Level 1* files. Since this version needed input boxes for *City*, *State*, *Country* and *Shape* in addition to the *Date* input box in the filter form, I got those added to the HTML page. Then it was on to figuring out how to have multiple filters applied to the dataset. Since the hide/show approach for the orignal version of *Level 1* had worked, I continued in that direction. This turned out to be a lot more challenging than I had expected and much more time-consuming. 
 
 Did run into an issue in which I was using *OR* instead of *AND* when combining the filter inputs but just looking at the results being displayed helped narrow the issue down pretty quick.
 
