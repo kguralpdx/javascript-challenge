@@ -31,21 +31,19 @@ The purpose of thie challenge is to take some UFO sighting data and load that in
             * [data.js](UFO-level-2/static/js/app.js) - this file contains the UFO sightings data
 
 
-## Requirements
-
-1. *MongoDB* **must** be running. If it's installed locally, you need to run `mongod` from a terminal and leave that up and running in the background. Then open another terminal and run `mongo`. If you have *MongoDB* running as a service, you just need to open a terminal and run `mongo`.
-
-2. For *Splinter* to work, you need to have the correct version of the *Chromedriver* downloaded and accessible. This must be the version that matches your current version of Chrome. Instructions on how to find your current version of *Chrome* as well as how/where to install the *Chromedriver* can be found at the end of this file in the **How-To Install Chromedriver** section, or [here](#how-to).
-
-3. After the *Chromedriver* has been installed, you will need to modify the `executable_path` in the *scrape_mars.py* file to point to where you put the *chromedriver.exe* file.
-    ![Images/executable_path.png](Images/executable_path.PNG)
-
-4. If you run the *Jupyter Notebook*, you will also need to modify the `executable_path` in there as well. There are 2 cells that will need to be updated (one in the *JPL Mars Space Images - Feature Image* section and one in the *Mars Hemispheres* section).
-
-Once the requirements are set, run `python app.py` from a Python terminal in the same folder as that file, click the URL to launch the webpage, and then click the *Scrape New Data* button to start scraping.
-
 
 ## Development and Analysis
+
+### Level 1 - Date Filtering
+
+We started out with an HTML page that had the filter section already added as well as the beginnings of a table. Just the first row, or table headings row, was included. The `<tr>` and `<td>` tags still needed to be added based on how many rows of data were in the source file. So that was the first thing I tackled--figuring out how to add those tags and populate them based on and using the data in the *data.js* file. That actually didn't turn out to be too difficult. Then came the date filtering and how to get that filtered data to appear as the only data in the table. 
+
+
+
+![images/level1_page.png](images/level1_page.PNG)
+
+
+### Level 2 - Date, City, State, Country, and Shape Filtering
 
 I started with the *Jupyter Notebook* so I could begin scripting my scrapes and to figure out how to navigate to the information I was looking for. The first data I needed was from the [NASA Mars News Site](https://mars.nasa.gov/news/). I used *BeautifulSoup* to examine the HTML and search for the feature data and tags. Once that was found, I was able to extract the title and paragraph of the featured article to variables. 
 
@@ -64,7 +62,7 @@ The last part was creating the webpage. I used *Bootstrap* for the layout and *J
 
 ## Notes
 
-Saved the screenshots of my site to the *Missions_to_Mars\static\images* folder. There's also the Jumbotron background image file I used (*pia22594.jpg*) saved in that same folder.
+The two images I used in the top sections of the webpages were from [NASA's JPL](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars) site. Decided to use two different images partly to keep the two webpages separate but mainly because it was too hard to choose just one image.
 
 Had a few issues along the way with this one. Had trouble figuring out how to get the 4 hemispheres data pulled correctly. Ended up working through this with Erin Hislope because she was stuck at the same spot. We ended up working with each other on and off for the rest of this project as well which was great because as issues came up for one or the other of us, it was two sets of eyes on it to decipher what was wrong.
 
