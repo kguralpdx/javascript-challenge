@@ -15,7 +15,6 @@ tableData.forEach((ufo) => {
 
         // Add the ufo data to the table
         cell.text(value);
-
     }); 
 });
 
@@ -43,34 +42,56 @@ const runEnter = () => {
     let inputValueCO = inputElementCO.property("value");
     let inputValueSH = inputElementSH.property("value");
 
-    // Use the form input to filter the data by date
-   // let filteredData = tableData.filter(sighting => sighting.datetime === inputValueDT);
-
-
-    //var table, tr, td, i, txtValue//, tddate, tdcity, tdstate;
-    var table = document.getElementById("ufo-table");
-    var tr = table.getElementsByTagName("tr");
- 
-     // Loop through all table rows, and hide those that don't match the search query
-    for (i = 1; i < tr.length; i++) {
-        var tddate = tr[i].getElementsByTagName("td")[0];       // date
-        var tdcity = tr[i].getElementsByTagName("td")[1];       // city
-        var tdstate = tr[i].getElementsByTagName("td")[2];      // state
-        var tdcountry = tr[i].getElementsByTagName("td")[3];    // country
-        var tdshape = tr[i].getElementsByTagName("td")[4];      // shape
-        var dateValue = tddate.textContent || tddate.innerText;
-        var cityValue = tdcity.textContent || tdcity.innerText;
-        var stateValue = tdstate.textContent || tdstate.innerText;
-        var countryValue = tdcountry.textContent || tdcountry.innerText;
-        var shapeValue = tdshape.textContent || tdshape.innerText;
-
-        // combine all the filters
-        if (dateValue.indexOf(inputValueDT) > -1  && cityValue.indexOf(inputValueCT) > -1 && stateValue.indexOf(inputValueST) > -1 && countryValue.indexOf(inputValueCO) > -1 && shapeValue.indexOf(inputValueSH) > -1) {
-            tr[i].style.display = "";
-        } else {
-            tr[i].style.display = "none";
-        };    
+    // Filter the dataset by each input value, testing for an input value for each of them
+    // If there is an input value, filter the curent dataset by that
+    // If not, set it to the dataset in the previous if/else statement
+    if (inputValueDT) {
+        var filteredDate = tableData.filter(sighting => sighting.datetime === inputValueDT);
+    } else {
+        var filteredDate = tableData
     };
+
+    if (inputValueCT) {
+        var filteredCity = filteredDate.filter(sighting => sighting.city === inputValueCT);
+    } else {
+        var filteredCity = filteredDate
+    };
+
+    if (inputValueST) {
+        var filteredState = filteredCity.filter(sighting => sighting.state === inputValueST);
+    } else {
+        var filteredState = filteredCity
+    };
+
+    if (inputValueCO) {
+        var filteredCountry = filteredState.filter(sighting => sighting.country === inputValueCO);
+    } else {
+        var filteredCountry = filteredState
+    };
+
+    if (inputValueSH) {
+        var filteredShape = filteredCountry.filter(sighting => sighting.shape === inputValueSH);
+    } else {
+        var filteredShape = filteredCountry
+    };
+
+    // Clear out the table rows
+    tbody.html("");
+
+    // Loop through the data to get an object for each filtered ufo data record
+    filteredShape.forEach((filterAll) => {
+        var row = tbody.append("tr");
+
+        Object.entries(filterAll).forEach(([key, value]) => {
+
+            // Append 1 cell for each ufo value (date, city, state, country, shape, duration, and comment )
+            var cell = row.append("td");
+
+            // Add the newly filtered data to the table
+            cell.text(value);
+
+        }); 
+    });
 };
 
 
