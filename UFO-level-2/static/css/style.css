@@ -211,11 +211,6 @@ select {
     background: #ffd98b;
 }
   
-  #table-area tbody td:nth-child(3)
-  #table-area tbody td:nth-child(4) {
-    text-transform: uppercase;
-  }
-
   .hero h1 {
     animation: smaller-title 1.2s forwards linear;
   }
